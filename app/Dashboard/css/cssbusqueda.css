@@ -1,0 +1,90 @@
+/* Table styles */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    background-color: #ffffff; /* Fondo blanco para la tabla */
+}
+
+.table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Permite que la tabla se ajuste al contenido */
+}
+
+.table-responsive th,
+.table-responsive td {
+    padding: 8px; /* Reducir el padding para ahorrar espacio */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+}
+
+.table-responsive th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table-responsive tr:hover {
+    background-color: #f1f1f1; /* Efecto hover en las filas */
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table-responsive table {
+        width: 100%;
+        border: 0;
+    }
+
+    .table-responsive thead {
+        display: none; /* Oculta el encabezado en móviles */
+    }
+
+    .table-responsive tr {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-responsive td {
+        display: block;
+        text-align: right;
+        border: none;
+        padding: 6px 0;
+        position: relative;
+        font-size: 0.85rem; /* Reducir el tamaño de la fuente en móviles */
+    }
+
+    .table-responsive td:before {
+        content: attr(data-label); /* Muestra el valor de data-label si existe */
+        font-weight: bold;
+        color: #4CAF50;
+        display: block;
+        float: left;
+        margin-right: 10px;
+        text-align: left; /* Alinea el texto del título a la izquierda */
+    }
+
+    /* Si no usas data-label, puedes generar los títulos dinámicamente con JavaScript */
+    .table-responsive td:nth-of-type(1):before { content: "ID"; }
+    .table-responsive td:nth-of-type(2):before { content: "Código"; }
+    .table-responsive td:nth-of-type(3):before { content: "Raza"; }
+    .table-responsive td:nth-of-type(4):before { content: "Utilidad"; }
+    .table-responsive td:nth-of-type(5):before { content: "Litros por Vaca"; }
+    .table-responsive td:nth-of-type(6):before { content: "Descendencia"; }
+}
+
+/* Ocultar el ícono no deseado */
+.modal-header .btn-close {
+    display: none !important;
+  }
+  

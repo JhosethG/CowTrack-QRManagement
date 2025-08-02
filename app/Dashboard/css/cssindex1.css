@@ -1,0 +1,290 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center container styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contained area */
+
+
+/* Table styles */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+}
+
+.table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    table-layout: auto; /* Permite que la tabla se ajuste al contenido */
+}
+
+.table-responsive th,
+.table-responsive td {
+    padding: 8px; /* Reducir el padding para ahorrar espacio */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+}
+
+.table-responsive th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table-responsive tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alinear botones de acción en modo escritorio */
+.table-responsive td[data-label="Acciones"] {
+    text-align: auto; /* Centrar los botones en la columna de Acciones */
+}
+
+.table-responsive td[data-label="Acciones"] .btn-group {
+    display: flex;
+    justify-content: center; /* Centrar los botones en modo escritorio */
+    gap: 4px; /* Espacio entre botones */
+}
+
+.table-responsive td[data-label="Acciones"] .btn {
+    margin: 0;
+    padding: 6px 10px; /* Ajustar el padding para que los botones sean más compactos */
+    font-size: 0.85rem; /* Reducir el tamaño de la fuente de los botones */
+}
+
+/* Estilos generales para el botón "Agregar Nuevo Registro" */
+button.btn-primary {
+    color: #ffffff;
+    font-size: 0.8rem; /* Aumentar tamaño de texto */
+    font-weight: bold;
+    padding: 10px 20px; /* Aumentar el tamaño del botón */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    transition: all 0.3s ease; /* Animación suave al pasar el ratón */
+    margin-bottom: 20px; /* Espacio debajo del botón */
+    display: inline-block; /* Asegurar su posición relativa */
+    text-align: center; /* Centrar texto */
+}
+
+/* Contenedor para centrar el botón en modo responsivo */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio debajo del contenedor */
+}
+
+/* Ajustes para el modo responsivo */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Alinear elementos en columna */
+    }
+
+    button.btn-primary {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        max-width: 200px; /* Limitar el ancho máximo */
+    }
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .table-responsive table {
+        width: 100%;
+        border: 0;
+    }
+
+    .table-responsive thead {
+        display: none;
+    }
+
+    .table-responsive tr {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .table-responsive td {
+        display: block;
+        text-align: right;
+        border: none;
+        padding: 6px 0;
+        position: relative;
+        font-size: 0.85rem; /* Reducir el tamaño de la fuente en móviles */
+    }
+
+    .table-responsive td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #4CAF50;
+        display: block;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .table-responsive td[data-label="Acciones"] {
+        text-align: right; /* Alinear los botones a la derecha en modo responsive */
+        padding-right: 1.5px; /* Margen de 1.5px a la derecha */
+    }
+
+    .table-responsive td[data-label="Acciones"] .btn-group {
+        justify-content: flex-end; /* Alinear los botones a la derecha en modo responsive */
+        gap: 4px; /* Espacio entre botones */
+    }
+
+    .table-responsive td[data-label="Acciones"] .btn {
+        display: inline-block;
+        margin: 0;
+        padding: 6px 10px; /* Ajustar el padding para que los botones sean más compactos */
+        font-size: 0.8rem; /* Reducir el tamaño de los botones en móviles */
+    }
+}
+
+/* Modal styles */
+.modal-content {
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+}
+
+.modal-header {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modal-footer .btn {
+    margin: 0 5px;
+}
+
+/* Botón de cerrar en el modal */
+.close {
+    color: #ffffff;
+    opacity: 1;
+}
+
+.close:hover {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+/* QR Code container */
+#qrCode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #138496;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* Agrega estilos personalizados para las tarjetas */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
